@@ -1,0 +1,1 @@
+import pandas as pddf = pd.read_csv('data/symbol_info_3-25.csv')df_sample = df.sample(25, random_state=188)df_sample = df_sample[['symbol', 'market_cap', 'sector','net_income']]print (df_sample)df_sample['NetIncome/MCap']=(df_sample['net_income']/df_sample['market_cap'])*100print(df_sample)df_sorted = df_sample.sort_values(by='NetIncome/MCap')
